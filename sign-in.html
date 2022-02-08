@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Chargebee</title>
 </head>
 <body class=" h-full bg-gray-50" x-data="signIn()">
@@ -15,8 +15,19 @@
 <div class=" flex bg-gray-50" x-show="signInDiv">
   
     <div class="hidden lg:flex relative  h-screen bg-gray-200 items-start  px-12 lg:px-10  lg:pt-64 xl:px-24 ">
+
+      <!--loading content UI with content-loader.png file  from api starts-->
+      <div>
+          <div class="animate-pulse flex h-full items-center gap-x-8 ">
+         <div><img src="./images/content-loader.png" alt=""></div>
+        </div>
+      </div>
+      <!--loading content from api ends-->
+
+
+      <!--marketing content loaded after api call starts-->
       
-        <div class="space-y-2 ">
+        <!-- <div class="space-y-2 ">
          
           <p class="text-sm text-gray-500 ">ANNOUNCING FALL 2021 PRODUCT RELEASE</p>
           <p class="text-2xl ">Synchronize your Sales & Finance
@@ -33,7 +44,14 @@
           </div>
         </div>
         
-        </div>
+        </div> -->
+
+
+        <!--marketing content loaded after api call ends-->
+
+
+
+
       </div>
     
       
@@ -252,7 +270,47 @@
 </div>
 
 
-<div class=" mt-8  lg:w-full lg:max-w-xl md:w-full md:max-w-lg xl:w-full xl:max-w-xl  sm:mx-auto sm:w-full sm:max-w-md w-full  m-auto space-y-4 ">
+<!--api error endpoint-->
+<div class="mt-8  lg:w-full lg:max-w-xl md:w-full md:max-w-lg xl:w-full xl:max-w-xl  sm:mx-auto sm:w-full sm:max-w-md w-full  m-auto space-y-4">
+
+<div class="rounded-md bg-red-50 p-4">
+  <div class="flex">
+    <div class="flex-shrink-0">
+      <!-- Heroicon name: solid/x-circle -->
+      <svg class="h-5 w-5 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+      </svg>
+    </div>
+    <div class="ml-3">
+      <h3 class="text-sm font-medium text-red-800">Something went wrong!</h3>
+      <div class="mt-2 text-sm text-red-700">
+        <ul role="list" class="list-disc pl-5 space-y-1">
+          <li>Description explaining what really happened and maybe some possible fixes that they can try or just the error message.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+<!--api error endpoint-->
+
+
+<div class=" relative mt-8  lg:w-full lg:max-w-xl md:w-full md:max-w-lg xl:w-full xl:max-w-xl  sm:mx-auto sm:w-full sm:max-w-md w-full  m-auto space-y-4 ">
+
+
+  <!--laoding spinner starts @note dont forget to add relative class in above div-->
+  <div class="absolute inset-0 w-full h-full bg-white opacity-75">
+    <div class="h-full w-full flex justify-center">
+      <svg class="animate-spin -ml-1 mr-3 h-6 w-6 m-auto text-primary-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+      </svg>
+    </div>
+  </div>
+
+  <!--laoding spinner ends-->
+
   <div class="bg-white shadow overflow-hidden sm:rounded-md">
   <ul role="list" class="divide-y divide-gray-200  w-full">
 
